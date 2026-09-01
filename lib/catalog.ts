@@ -1,11 +1,69 @@
-export type Product={id:string;slug:string;name:string;brand:string;category:string;price:number;salePrice?:number;weight:string;stock:number;rating:number;sku:string;image:string;description:string;tags:string[];model3dUrl?:string};
-export const products:Product[]=[
- {id:"p1",slug:"midnight-musthave",name:"Midnight Blend",brand:"MustHave",category:"Tobacco",price:26,salePrice:22,weight:"125g",stock:18,rating:4.9,sku:"MH-MID-125",image:"https://images.unsplash.com/photo-1518066000714-58c45f1a2c0a?auto=format&fit=crop&w=900&q=80",description:"A dark, velvety aromatic blend with a cool finish.",tags:["berry","cool","premium"]},
- {id:"p2",slug:"alpha-orbit",name:"Orbit Prime",brand:"Alpha Hookah",category:"Hookahs",price:289,weight:"2.8kg",stock:9,rating:4.8,sku:"ALP-ORB-01",image:"https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=900&q=80",description:"Precision-machined stainless steel hookah with magnetic hose port.",tags:["steel","premium"]},
- {id:"p3",slug:"blackburn-cosmos",name:"Cosmos Reserve",brand:"BlackBurn",category:"Tobacco",price:24,weight:"100g",stock:23,rating:4.7,sku:"BB-COS-100",image:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=80",description:"A full-bodied space-age fruit profile.",tags:["fruit","dark"]},
- {id:"p4",slug:"moze-breeze",name:"Breeze Pro",brand:"Moze",category:"Hookahs",price:340,salePrice:299,weight:"3.1kg",stock:4,rating:5,sku:"MZ-BRZ-01",image:"https://images.unsplash.com/photo-1527299323786-3bdeedec6779?auto=format&fit=crop&w=900&q=80",description:"Architectural German engineering, built for smooth sessions.",tags:["hookah","steel"]},
- {id:"p5",slug:"oblako-stone",name:"Stone Phunnel",brand:"Oblako",category:"Bowls",price:42,weight:"220g",stock:36,rating:4.8,sku:"OB-STN-01",image:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",description:"Hand-finished clay bowl for even heat management.",tags:["clay","bowl"]},
- {id:"p6",slug:"element-air",name:"Air Series",brand:"Element",category:"Tobacco",price:25,weight:"200g",stock:0,rating:4.6,sku:"EL-AIR-200",image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",description:"Bright citrus and clean white tea.",tags:["citrus","light"]},
- {id:"p7",slug:"steamulation-x",name:"X Blow Off",brand:"Steamulation",category:"Accessories",price:69,weight:"340g",stock:12,rating:4.9,sku:"ST-X-01",image:"https://images.unsplash.com/photo-1527082395-e939b847da0d?auto=format&fit=crop&w=900&q=80",description:"A performance upgrade engineered for airflow.",tags:["accessory"]},
- {id:"p8",slug:"bonche-cocoa",name:"Cocoa Aged",brand:"Bonche",category:"Tobacco",price:30,weight:"80g",stock:8,rating:4.8,sku:"BC-COC-80",image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",description:"A rich leaf blend with restrained cacao notes.",tags:["cocoa","dark"]}
+export interface Product {
+  id: string;
+  slug: string;
+  name: string;
+  brand: string;
+  category: "Hookahs" | "Tobacco" | "Bowls" | "Accessories" | "Charcoal";
+  price: number;
+  salePrice?: number;
+  rating: number;
+  inStock: boolean;
+  image: string;
+  description: string;
+  specs: Record<string, string>;
+}
+
+export const products: Product[] = [
+  {
+    id: "whm-001",
+    slug: "alpha-hookah-model-x-black-matte",
+    name: "Model X - Black Matte",
+    brand: "Alpha Hookah",
+    category: "Hookahs",
+    price: 189.99,
+    salePrice: 169.99,
+    rating: 4.9,
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&w=800&q=80",
+    description: "Iconic vertical purge system with anodized aluminum and stainless steel internal construction.",
+    specs: {
+      Height: "42 cm",
+      Material: "Stainless Steel & Anodized Aluminum",
+      Origin: "Russia",
+    },
+  },
+  {
+    id: "whm-002",
+    slug: "musthave-pinkman-100g",
+    name: "Pinkman 100g (Grapefruit, Strawberry, Raspberry)",
+    brand: "MustHave",
+    category: "Tobacco",
+    price: 22.0,
+    rating: 4.8,
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=800&q=80",
+    description: "The benchmark berry blend featuring wild strawberry, raspberry syrup, and fresh grapefruit squeeze.",
+    specs: {
+      Weight: "100g",
+      Strength: "Medium-Strong",
+      Cut: "Fine Burley",
+    },
+  },
+  {
+    id: "whm-003",
+    slug: "oblako-phunnel-m-glazed",
+    name: "Phunnel M - Glazed White/Black",
+    brand: "Oblako",
+    category: "Bowls",
+    price: 34.5,
+    rating: 4.7,
+    inStock: true,
+    image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=800&q=80",
+    description: "White clay glazed phunnel bowl optimized for high-flavor heat retention and even burn.",
+    specs: {
+      Capacity: "18-23g",
+      Material: "White Ceramic Glaze",
+      Compatibility: "Kaloud / Foil",
+    },
+  },
 ];
