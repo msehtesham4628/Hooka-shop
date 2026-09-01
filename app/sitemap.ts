@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next";import {products} from "@/lib/catalog";export default function sitemap():MetadataRoute.Sitemap{return ["","/shop","/about","/wholesale",...products.map(p=>`/product/${p.slug}`)].map(url=>({url:`https://nocturne.example${url}`,lastModified:new Date()}))}
